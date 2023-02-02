@@ -6,14 +6,17 @@
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
 
-void PrintArray (int [,,] arr){
-    for (int k=0;k<2;k++){
-        for(int i=0; i<2; i++){
-            for(int j=0; j<2; j++) Console.Write($"{arr[i,j,k]}({i},{j},{k}) ");
+void PrintArray(int[,,] arr)
+{
+    for (int k = 0; k < 2; k++)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++) Console.Write($"{arr[i, j, k]}({i},{j},{k}) ");
             Console.WriteLine();
         }
     }
 }
 
-int [,,] array = {{{23, 48},{56,33}},{{99,82},{11,17}}};
+int[,,] array = { { { 23, 48 }, { 56, 33 } }, { { 99, 82 }, { 11, 17 } } };
 PrintArray(array);
