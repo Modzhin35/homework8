@@ -11,7 +11,7 @@ int Input(string Message)
     Console.Write(Message);
     return Convert.ToInt32(Console.ReadLine());
 }
-int[,] FirstRandomArr(int firstRow, int firstCol)
+int[,] RandomArr(int firstRow, int firstCol)
 {
     int[,] firstRandArray = new int[firstRow, firstCol];
     for (int i = 0; i < firstRow; i++)
@@ -21,15 +21,6 @@ int[,] FirstRandomArr(int firstRow, int firstCol)
     return firstRandArray;
 }
 
-int[,] SecondRandomArr(int secondRow, int secondCol)
-{
-    int[,] secondRandArray = new int[secondRow, secondCol];
-    for (int i = 0; i < secondRow; i++)
-    {
-        for (int j = 0; j < secondCol; j++) secondRandArray[i, j] = new Random().Next(0, 99);
-    }
-    return secondRandArray;
-}
 
 void PrintArray(int[,] arr)
 {
@@ -60,10 +51,10 @@ int secondCols = Math.Abs(Input("Введите количество столб�
 if (firstCols != secondRows) Console.Write("Матрицы нельзя перемножить!");
 else
 {
-    int[,] firstArray = FirstRandomArr(firstRows, firstCols);
+    int[,] firstArray = RandomArr(firstRows, firstCols);
     PrintArray(firstArray);
     Console.WriteLine();
-    int[,] secondArray = SecondRandomArr(secondRows, secondCols);
+    int[,] secondArray = RandomArr(secondRows, secondCols);
     PrintArray(secondArray);
     Console.WriteLine();
     Console.WriteLine("Произведение матриц:");
